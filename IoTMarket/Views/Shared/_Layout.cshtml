@@ -17,7 +17,7 @@
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body>
+<body class="search-backgroundBorder">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
@@ -34,7 +34,7 @@
 								Content Management
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropDownMenuLink">
-								<a class="dropdown-item">Category</a>
+								<a class="dropdown-item" asp-action="Index" asp-controller="Category" asp-area="Admin">Category</a>
 								<a class="dropdown-item">Sub Category</a>
 								<a class="dropdown-item">MenuItem</a>
 								<a class="dropdown-item">Coupons</a>
@@ -61,11 +61,11 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2019 - IoTMarket - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+	<footer class="border-top pl-3 footer text-white-50" style="background-color: #343a40;">
+		<div class="container">
+			&copy; 2019 - IoTMarket - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+		</div>
+	</footer>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
