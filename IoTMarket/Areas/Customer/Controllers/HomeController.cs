@@ -8,6 +8,7 @@ using IoTMarket.Models;
 
 namespace IoTMarket.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         public IActionResult Index()
