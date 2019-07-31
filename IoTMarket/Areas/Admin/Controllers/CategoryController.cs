@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using IoTMarket.Data;
+using IoTMarket.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,6 +23,27 @@ namespace IoTMarket.Areas.Admin.Controllers
         {
 
             return View(await _db.Category.ToListAsync());
+        }
+
+        // GET - CREATE
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST - CREATE
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Category category)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Category.Add(category);
+                await _db.SaveChangesAsync();
+
+                return RedirectToAction("Index");
+            }
+            return View(category);
         }
     }
 }
