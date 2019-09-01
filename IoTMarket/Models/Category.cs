@@ -10,6 +10,7 @@ namespace IoTMarket.Models
     {
         [Key]
         public int Id { get; set; }
+        [Display(Name="Nombre de categoria")]
         [Required]
         public string Name { get; set; }
     }
